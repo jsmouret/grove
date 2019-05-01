@@ -1,0 +1,17 @@
+{
+    "name": "Grove.Editor",
+    "references": [
+        "GUID:35be5a3a66047ea4c815def20a09ec79"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
