@@ -19,9 +19,7 @@ namespace Grove.Behaviours
 			{
 				// After an assembly reload, Awake is not called on already loaded gameobjects
 				// so search again for all roots
-
-				s_Instances = new HashSet<GroveRoot>();
-				s_Instances.UnionWith(FindObjectsOfType<GroveRoot>());
+				s_Instances = new HashSet<GroveRoot>(FindObjectsOfType<GroveRoot>());
 			}
 			return s_Instances;
 		}
