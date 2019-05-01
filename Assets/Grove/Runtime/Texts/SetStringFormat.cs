@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using Grove.Actions;
-using Grove.Common;
 using Grove.Properties;
 using Grove.Variables;
 
@@ -15,7 +14,7 @@ namespace Grove.Texts
 		[SerializeField]
 		protected VariableArrayInput m_Args;
 
-		protected override string Evaluate(IContext context)
+		protected override string Evaluate(IActionContext context)
 		{
 			var format = m_Format.Get(context);
 			var objects = m_Args.LoadObjects(context);

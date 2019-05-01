@@ -1,14 +1,13 @@
 ﻿using System;
 using UnityEngine;
-using Grove.Common;
-using Grove.Maths;
+using Grove.Actions;
 
 namespace Grove.Animations
 {
 	[Serializable]
 	public class SetTrigger : AnimatorParameterAction
 	{
-		protected sealed override void ExecuteParameter(IContext context, Animator animator, string parameter)
+		protected sealed override void ExecuteParameter(IActionContext context, Animator animator, string parameter)
 		{
 			animator.SetTrigger(parameter);
 		}

@@ -21,36 +21,38 @@ namespace Grove.Properties.Editor
 
 			using (new EditorGUI.DisabledGroupScope(true))
 			{
-				DrawCache();
+				// DrawCache();
 				DrawRoots();
 			}
 		}
 
-		private void DrawCache()
-		{
-			var property = serializedObject.targetObject as Property;
-			var cache = property.EditorGetCache();
-			if (cache == null)
-			{
-				return;
-			}
+		/*
+				private void DrawCache()
+				{
+					var property = serializedObject.targetObject as Property;
+					var cache = property.EditorGetCache();
+					if (cache == null)
+					{
+						return;
+					}
 
-			EditorGUILayout.Separator();
-			EditorGUILayout.LabelField($"Cache #{cache.Count}");
+					EditorGUILayout.Separator();
+					EditorGUILayout.LabelField($"Cache #{cache.Count}");
 
-			foreach (var entry in cache)
-			{
-				var behaviour = entry.Key.GetBehaviour();
-				var reference = entry.Value.TryGetTarget(out var target)
-					? target.GetHashCode().ToString()
-					: "null";
+					foreach (var entry in cache)
+					{
+						var context = entry.Key;
+						var reference = entry.Value.TryGetTarget(out var target)
+							? target.GetHashCode().ToString()
+							: "null";
 
-				EditorGUILayout.BeginHorizontal();
-				EditorGUILayout.ObjectField(behaviour, typeof(MonoBehaviour), false);
-				EditorGUILayout.LabelField(reference);
-				EditorGUILayout.EndHorizontal();
-			}
-		}
+						EditorGUILayout.BeginHorizontal();
+						EditorGUILayout.ObjectField(context, typeof(IContext), false);
+						EditorGUILayout.LabelField(reference);
+						EditorGUILayout.EndHorizontal();
+					}
+				}
+		*/
 
 		private void DrawRoots()
 		{

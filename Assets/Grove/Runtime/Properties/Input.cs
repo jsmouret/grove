@@ -11,7 +11,7 @@ namespace Grove.Properties
 		T Get(IContext context);
 	}
 
-	public class InputBaseForEditor : Observable
+	public class InputBaseForEditor
 	{
 	}
 

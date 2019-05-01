@@ -5,9 +5,14 @@ using Grove.Maths;
 
 namespace Grove.Actions
 {
+	public interface IActionContext : IContext
+	{
+		MonoBehaviour GetBehaviour();
+	}
+
 	public interface IAction
 	{
-		void Execute(IContext context);
+		void Execute(IActionContext context);
 	}
 
 	public abstract class ActionBase : IAction
@@ -15,7 +20,7 @@ namespace Grove.Actions
 		[SerializeField]
 		protected BoolInput m_Disable;
 
-		public void Execute(IContext context)
+		public void Execute(IActionContext context)
 		{
 			if (!m_Disable.Get(context))
 			{
@@ -23,13 +28,13 @@ namespace Grove.Actions
 			}
 		}
 
-		protected abstract void DoExecute(IContext context);
+		protected abstract void DoExecute(IActionContext context);
 	}
 
 	[Serializable]
 	public sealed class Action : ReorderableArray<ActionVariant>, IAction
 	{
-		public void Execute(IContext context)
+		public void Execute(IActionContext context)
 		{
 			foreach (var item in m_Items)
 			{

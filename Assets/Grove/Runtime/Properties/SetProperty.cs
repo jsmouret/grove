@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using Grove.Actions;
-using Grove.Common;
 
 namespace Grove.Properties
 {
@@ -13,7 +12,7 @@ namespace Grove.Properties
 		[SerializeField]
 		protected Input m_Value;
 
-		protected sealed override void DoExecute(IContext context)
+		protected sealed override void DoExecute(IActionContext context)
 		{
 			if (m_Target == null)
 			{

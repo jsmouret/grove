@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using Grove.Common;
 using Grove.Properties;
 
 namespace Grove.Actions
@@ -11,7 +10,7 @@ namespace Grove.Actions
 		[SerializeField]
 		protected ActionInput m_Value;
 
-		protected override Action Evaluate(IContext context)
+		protected override Action Evaluate(IActionContext context)
 		{
 			return m_Value.Get(context);
 		}

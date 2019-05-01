@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-using Grove.Common;
-using Grove.Maths;
+﻿using UnityEngine;
 
 namespace Grove.Events
 {
@@ -10,7 +7,7 @@ namespace Grove.Events
 		[SerializeField]
 		protected TComponent m_TargetOverride;
 
-		private TComponent FindTarget(IContext context)
+		private TComponent FindTarget(IEventContext context)
 		{
 			if (m_TargetOverride != null)
 			{

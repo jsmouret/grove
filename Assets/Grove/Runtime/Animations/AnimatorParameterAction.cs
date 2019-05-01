@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using Grove.Actions;
-using Grove.Common;
 using Grove.Texts;
 
 namespace Grove.Animations
@@ -12,12 +11,12 @@ namespace Grove.Animations
 		[SerializeField]
 		protected StringInput m_Parameter;
 
-		protected sealed override void Execute(IContext context, Animator animator)
+		protected sealed override void Execute(IActionContext context, Animator animator)
 		{
 			var parameter = m_Parameter.Get(context);
 			ExecuteParameter(context, animator, parameter);
 		}
 
-		protected abstract void ExecuteParameter(IContext context, Animator animator, string parameter);
+		protected abstract void ExecuteParameter(IActionContext context, Animator animator, string parameter);
 	}
 }

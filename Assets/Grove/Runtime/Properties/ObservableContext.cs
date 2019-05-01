@@ -5,8 +5,6 @@ namespace Grove.Properties
 {
 	public interface IObservableContext
 	{
-		bool IsChanging(IContext context);
-		void Subscribe(IContext context, Callback callback);
-		void Unsubscribe(IContext context, Callback callback);
+		IObservable GetObservable(IContext context);
 	}
 }

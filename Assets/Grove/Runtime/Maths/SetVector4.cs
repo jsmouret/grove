@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Grove.Common;
+using Grove.Actions;
 using Grove.Properties;
 
 namespace Grove.Maths
@@ -24,7 +24,7 @@ namespace Grove.Maths
 		[SerializeField]
 		protected Vector4Input m_Value;
 
-		protected override Vector4 Evaluate(IContext context)
+		protected override Vector4 Evaluate(IActionContext context)
 		{
 			var a = m_Target.Load(context);
 			var b = m_Value.Get(context);

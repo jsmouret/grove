@@ -90,18 +90,16 @@ namespace Grove.Properties
 				}
 
 				// Reference expired, resolve again 
-				var target = Resolver.FromBehaviour<T>(name, context.GetBehaviour());
+				IOutput<T> target = null; //Resolver.FromBehaviour<T>(name, context.GetBehaviour());
 				reference.SetTarget(target);
 				return target;
 			}
 
 			// First time
-			var output = Resolver.FromBehaviour<T>(name, context.GetBehaviour());
+			IOutput<T> output = null; //Resolver.FromBehaviour<T>(name, context.GetBehaviour());
 			reference = new WeakReference<IOutput>(output);
 
 			m_Cache.Add(context, reference);
-			context.AddOnDestroy(OnContextDestroy);
-
 			return output;
 		}
 

@@ -16,7 +16,7 @@ namespace Grove.Behaviours
 		[SerializeField]
 		protected BoolInput m_Enabled;
 
-		protected override void DoExecute(IContext context)
+		protected override void DoExecute(IActionContext context)
 		{
 			var not = m_Not.Get(context);
 			var enabled = m_Enabled.Get(context);

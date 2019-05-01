@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Grove.Actions;
 using Grove.Common;
 using Grove.Maths;
 
@@ -10,6 +11,11 @@ namespace Grove.Events
 		OnEnable,
 		OnDisable,
 		OnEvent,
+	}
+
+	public interface IEventContext : IActionContext
+	{
+		void OnEvent();
 	}
 
 	public interface IEvent

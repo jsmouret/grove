@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Grove.Common;
+using Grove.Actions;
 using Grove.Properties;
 
 namespace Grove.Maths
@@ -18,7 +18,7 @@ namespace Grove.Maths
 		[SerializeField]
 		protected QuaternionInput m_Value;
 
-		protected override Quaternion Evaluate(IContext context)
+		protected override Quaternion Evaluate(IActionContext context)
 		{
 			// var a = m_Target.Get(context);
 			var b = m_Value.Get(context);

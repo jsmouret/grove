@@ -19,16 +19,20 @@ namespace Grove.Behaviours
 		[SerializeField]
 		protected Grove.Actions.Action m_Else;
 
-		public void OnEnable()
+		public override void OnEnable()
 		{
+			base.OnEnable();
+
 			m_When.Attach(this);
 			Evaluate(EventSource.OnEnable);
 		}
 
-		public void OnDisable()
+		public override void OnDisable()
 		{
 			Evaluate(EventSource.OnDisable);
 			m_When.Detach(this);
+
+			base.OnDisable();
 		}
 
 		public override void OnEvent()

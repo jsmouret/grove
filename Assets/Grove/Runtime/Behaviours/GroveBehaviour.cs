@@ -3,13 +3,12 @@ using UnityEngine;
 using Grove.Actions;
 using Grove.Common;
 using Grove.Properties;
+using Grove.Variables;
 
 namespace Grove.Behaviours
 {
 	public abstract class GroveBehaviour : MonoBehaviour, IContext
 	{
-		private List<ContextAction> m_OnDestroy;
-
 		// IContext
 
 		public MonoBehaviour GetBehaviour()
@@ -17,30 +16,22 @@ namespace Grove.Behaviours
 			return this;
 		}
 
-		public virtual void OnEvent()
-		{
-		}
-
-		public void AddOnDestroy(ContextAction onDestroy)
-		{
-			if (m_OnDestroy == null)
-			{
-				m_OnDestroy = new List<ContextAction>();
-			}
-			m_OnDestroy.Add(onDestroy);
-		}
-
 		// MonoBehaviour
+
+		public virtual void Awake()
+		{
+		}
+
+		public virtual void OnEnable()
+		{
+		}
+
+		public virtual void OnDisable()
+		{
+		}
 
 		public virtual void OnDestroy()
 		{
-			if (m_OnDestroy != null)
-			{
-				foreach (var onDestroy in m_OnDestroy)
-				{
-					onDestroy(this);
-				}
-			}
 		}
 
 		// Helpers

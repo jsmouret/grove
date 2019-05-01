@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using Grove.Actions;
-using Grove.Common;
 using Grove.Properties;
 
 namespace Grove.Visuals
@@ -19,7 +18,7 @@ namespace Grove.Visuals
 		[SerializeField]
 		protected ColorInput m_Value;
 
-		protected override Color Evaluate(IContext context)
+		protected override Color Evaluate(IActionContext context)
 		{
 			switch (m_Operator)
 			{

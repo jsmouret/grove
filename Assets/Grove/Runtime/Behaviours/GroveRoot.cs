@@ -30,7 +30,6 @@ namespace Grove.Behaviours
 			{
 				s_Instances = new HashSet<GroveRoot>();
 			}
-
 			s_Instances.Add(this);
 		}
 
