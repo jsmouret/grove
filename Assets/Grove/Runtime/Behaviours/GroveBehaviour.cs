@@ -6,7 +6,7 @@ using Grove.Properties;
 
 namespace Grove.Behaviours
 {
-	public class GroveBehaviour : MonoBehaviour, IContext
+	public abstract class GroveBehaviour : MonoBehaviour, IContext
 	{
 		private List<ContextAction> m_OnDestroy;
 

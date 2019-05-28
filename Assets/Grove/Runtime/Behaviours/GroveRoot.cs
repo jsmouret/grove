@@ -6,7 +6,7 @@ using Grove.Common;
 
 namespace Grove.Behaviours
 {
-	public class GroveRoot : GroveBehaviour
+	public abstract class GroveRoot : GroveBehaviour
 	{
 		private static HashSet<GroveRoot> s_Instances = null;
 #if UNITY_EDITOR
