@@ -12,7 +12,7 @@ namespace Grove.UI
 		private static readonly Dictionary<UnityEngine.UI.Button, Observable> m_Observables
 			= new Dictionary<UnityEngine.UI.Button, Observable>();
 
-		protected override void Attach(IContext context, UnityEngine.UI.Button button)
+		protected override void OnAttach(IEventContext context, UnityEngine.UI.Button button)
 		{
 			if (!m_Observables.TryGetValue(button, out var observable))
 			{
@@ -24,7 +24,7 @@ namespace Grove.UI
 			observable.Subscribe(context.OnEvent);
 		}
 
-		protected override void Detach(IContext context, UnityEngine.UI.Button button)
+		protected override void OnDetach(IEventContext context, UnityEngine.UI.Button button)
 		{
 			var observable = m_Observables[button];
 			observable.Unsubscribe(context.OnEvent);

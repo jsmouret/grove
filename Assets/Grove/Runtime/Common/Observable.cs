@@ -9,7 +9,6 @@ namespace Grove.Variables
 
 	public interface IObservable
 	{
-
 		bool IsChanging();
 		void Subscribe(Callback callback);
 		void Unsubscribe(Callback callback);

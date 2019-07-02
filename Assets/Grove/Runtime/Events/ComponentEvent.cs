@@ -22,14 +22,14 @@ namespace Grove.Events
 			return target;
 		}
 
-		public sealed override void Attach(IContext context)
+		public sealed override void OnAttach(IEventContext context)
 		{
-			Attach(context, FindTarget(context));
+			OnAttach(context, FindTarget(context));
 		}
 
-		public sealed override void Detach(IContext context)
+		public sealed override void OnDetach(IEventContext context)
 		{
-			Detach(context, FindTarget(context));
+			OnDetach(context, FindTarget(context));
 		}
 
 		protected sealed override bool IsRaised(IContext context, EventSource eventSource)
@@ -37,8 +37,8 @@ namespace Grove.Events
 			return IsRaised(context, eventSource, FindTarget(context));
 		}
 
-		protected abstract void Attach(IContext context, TComponent component);
-		protected abstract void Detach(IContext context, TComponent component);
-		protected abstract bool IsRaised(IContext context, EventSource eventSource, TComponent component);
+		protected abstract void OnAttach(IEventContext context, TComponent component);
+		protected abstract void OnDetach(IEventContext context, TComponent component);
+		protected abstract bool IsRaised(IEventContext context, EventSource eventSource, TComponent component);
 	}
 }

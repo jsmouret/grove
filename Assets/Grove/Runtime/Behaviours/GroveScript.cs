@@ -23,14 +23,14 @@ namespace Grove.Behaviours
 		{
 			base.OnEnable();
 
-			m_When.Attach(this);
+			m_When.OnAttach(this);
 			Evaluate(EventSource.OnEnable);
 		}
 
 		public override void OnDisable()
 		{
 			Evaluate(EventSource.OnDisable);
-			m_When.Detach(this);
+			m_When.OnDetach(this);
 
 			base.OnDisable();
 		}

@@ -11,12 +11,12 @@ namespace Grove.Properties
 		[SerializeField]
 		protected PropertyArrayInput m_Properties;
 
-		public override void Attach(IContext context)
+		public override void OnAttach(IEventContext context)
 		{
 			m_Properties.Subscribe(context, context.OnEvent);
 		}
 
-		public override void Detach(IContext context)
+		public override void OnDetach(IEventContext context)
 		{
 			m_Properties.Unsubscribe(context, context.OnEvent);
 		}

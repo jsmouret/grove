@@ -11,14 +11,14 @@ namespace Grove.Events
 		[SerializeField]
 		protected EventInput m_Include;
 
-		public override void Attach(IContext context)
+		public override void OnAttach(IEventContext context)
 		{
-			m_Include.Get(context).Attach(context);
+			m_Include.Get(context).OnAttach(context);
 		}
 
-		public override void Detach(IContext context)
+		public override void OnDetach(IEventContext context)
 		{
-			m_Include.Get(context).Detach(context);
+			m_Include.Get(context).OnDetach(context);
 		}
 
 		protected override bool IsRaised(IContext context, EventSource eventSource)

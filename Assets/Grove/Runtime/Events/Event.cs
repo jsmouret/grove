@@ -20,21 +20,20 @@ namespace Grove.Events
 
 	public interface IEvent
 	{
-		void Attach(IContext context);
-		void Detach(IContext context);
-		bool Raised(IContext context, EventSource eventSource);
+		void OnAttach(IEventContext context);
+		void OnDetach(IEventContext context);
+		bool Raised(IEventContext context, EventSource eventSource);
 	}
 
 	public abstract class EventBase : IEvent
 	{
 		[SerializeField]
 		protected BoolInput m_Mute;
-
-		public virtual void Attach(IContext context)
+		public virtual void OnAttach(IEventContext context)
 		{
 		}
 
-		public virtual void Detach(IContext context)
+		public virtual void OnDetach(IEventContext context)
 		{
 		}
 
@@ -53,19 +52,19 @@ namespace Grove.Events
 	[Serializable]
 	public sealed class Event : ReorderableArray<EventVariant>, IEvent
 	{
-		public void Attach(IContext context)
+		public void OnAttach(IEventContext context)
 		{
 			foreach (var item in m_Items)
 			{
-				item.Value?.Attach(context);
+				item.Value?.OnAttach(context);
 			}
 		}
 
-		public void Detach(IContext context)
+		public void OnDetach(IEventContext context)
 		{
 			foreach (var item in m_Items)
 			{
-				item.Value?.Detach(context);
+				item.Value?.OnDetach(context);
 			}
 		}
 

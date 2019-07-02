@@ -8,14 +8,14 @@ namespace Grove.Events
 	[Serializable]
 	public class EventOutput : OutputClass<Event>, IEvent
 	{
-		public void Attach(IContext context)
+		public void OnAttach(IEventContext context)
 		{
-			Get().Attach(context);
+			Get().OnAttach(context);
 		}
 
-		public void Detach(IContext context)
+		public void OnDetach(IEventContext context)
 		{
-			Get().Detach(context);
+			Get().OnDetach(context);
 		}
 
 		public bool Raised(IContext context, EventSource eventSource)
@@ -27,14 +27,14 @@ namespace Grove.Events
 	[CreateAssetMenu(fileName = "C_Event", menuName = "Grove/Events/Event Constant", order = 46)]
 	public class EventConstant : Constant<Event, EventConstant>, IEvent
 	{
-		public void Attach(IContext context)
+		public void OnAttach(IEventContext context)
 		{
-			Get().Attach(context);
+			Get().OnAttach(context);
 		}
 
-		public void Detach(IContext context)
+		public void OnDetach(IEventContext context)
 		{
-			Get().Detach(context);
+			Get().OnDetach(context);
 		}
 
 		public bool Raised(IContext context, EventSource eventSource)
