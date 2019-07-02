@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 namespace Grove.Common.Editor
 {
 	[CustomPropertyDrawer(typeof(ReorderableArray), true)]
-	[CustomPropertyDrawer(typeof(Containers.List), true)]
+	[CustomPropertyDrawer(typeof(Containers.ListOutput), true)]
 	public class ReorderableArrayPropertyDrawer : PropertyDrawer
 	{
 		private const string ItemsProperty = "m_Items";

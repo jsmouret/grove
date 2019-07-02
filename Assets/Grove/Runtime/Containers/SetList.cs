@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Grove.Common;
 using Grove.Properties;
@@ -6,7 +7,7 @@ using Grove.Properties;
 namespace Grove.Containers
 {
 	[Serializable]
-	public class SetList : PropertySetter<List, ListProperty>
+	public class SetList : PropertySetter<IList, ListProperty>
 	{
 		protected enum Operator
 		{
@@ -18,7 +19,7 @@ namespace Grove.Containers
 		[SerializeField]
 		protected ListInput m_Value;
 
-		protected override List Evaluate(IContext context)
+		protected override IList Evaluate(IContext context)
 		{
 			// var a = m_Target.Get(context);
 			var b = m_Value.Get(context);

@@ -1,9 +1,7 @@
 ﻿using System;
-using Grove.Actions;
 using Grove.Behaviours;
 using Grove.Containers;
 using Grove.Maths;
-using Grove.Variables;
 using UnityEngine;
 
 [Serializable]
@@ -13,17 +11,10 @@ public class Cell
 	public Vector3Output Position;
 }
 
-/*
 [Serializable]
-public class Board : List<Cell>
+public class BoardOutput : ListOutput<Cell>
 {
 }
-
-[Serializable]
-public class BoardOutput : OutputClass<Board>
-{
-}
-*/
 
 public class TicTacToe : GroveRoot
 {
@@ -32,7 +23,7 @@ public class TicTacToe : GroveRoot
 	public PlayerOutput Winner;
 	public PlayerOutput CurrentPlayer;
 
-	public IList<Cell> Board = new ListOutput<Cell, List<Cell>>();
+	public BoardOutput Board;
 
 	public void Start()
 	{
