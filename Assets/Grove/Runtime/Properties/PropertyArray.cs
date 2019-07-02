@@ -6,7 +6,7 @@ using Grove.Variables;
 namespace Grove.Properties
 {
 	[Serializable]
-	public class PropertyArray : ReorderableArray<Property>, IObservableContext
+	public class PropertyArray : ReorderableArray<Property>
 	{
 		public bool IsChanging(IContext context)
 		{

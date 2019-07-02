@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Grove.Common;
 
 namespace Grove.Actions
 {
@@ -9,7 +10,7 @@ namespace Grove.Actions
 		[SerializeField]
 		protected ActionInput m_Include;
 
-		protected sealed override void DoExecute(IActionContext context)
+		protected sealed override void DoExecute(IContext context)
 		{
 			m_Include.Get(context).Execute(context);
 		}

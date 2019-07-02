@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Grove.Actions;
+using Grove.Common;
 using Grove.Maths;
 
 namespace Grove.Animations
@@ -11,7 +11,7 @@ namespace Grove.Animations
 		[SerializeField]
 		protected FloatInput m_Value;
 
-		protected sealed override void ExecuteParameter(IActionContext context, Animator animator, string parameter)
+		protected sealed override void ExecuteParameter(IContext context, Animator animator, string parameter)
 		{
 			var value = m_Value.Get(context);
 			animator.SetFloat(parameter, value);

@@ -6,7 +6,7 @@ using Grove.Variables;
 namespace Grove.Properties
 {
 	[Serializable]
-	public class PropertyArrayInput : Input<PropertyArray, PropertyArrayProperty, PropertyArrayConstant>, IObservableContext
+	public class PropertyArrayInput : Input<PropertyArray, PropertyArrayProperty, PropertyArrayConstant>
 	{
 		public bool IsChanging(IContext context)
 		{

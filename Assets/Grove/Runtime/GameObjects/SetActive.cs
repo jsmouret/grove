@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using Grove.Actions;
+using Grove.Common;
 using Grove.Maths;
 
 namespace Grove.GameObjects
@@ -15,7 +16,7 @@ namespace Grove.GameObjects
 		[SerializeField]
 		protected BoolInput m_Active;
 
-		protected override void DoExecute(IActionContext context)
+		protected override void DoExecute(IContext context)
 		{
 			var go = m_Target.Get(context);
 			var not = m_Not.Get(context);

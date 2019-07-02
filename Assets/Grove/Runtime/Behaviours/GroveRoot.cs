@@ -24,8 +24,10 @@ namespace Grove.Behaviours
 			return s_Instances;
 		}
 
-		public virtual void Awake()
+		public override void Awake()
 		{
+			base.Awake();
+
 			if (s_Instances == null)
 			{
 				s_Instances = new HashSet<GroveRoot>();

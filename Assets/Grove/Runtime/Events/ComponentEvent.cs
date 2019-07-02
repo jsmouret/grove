@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Grove.Common;
 
 namespace Grove.Events
 {
@@ -7,7 +8,7 @@ namespace Grove.Events
 		[SerializeField]
 		protected TComponent m_TargetOverride;
 
-		private TComponent FindTarget(IEventContext context)
+		private TComponent FindTarget(IContext context)
 		{
 			if (m_TargetOverride != null)
 			{
@@ -39,6 +40,6 @@ namespace Grove.Events
 
 		protected abstract void OnAttach(IEventContext context, TComponent component);
 		protected abstract void OnDetach(IEventContext context, TComponent component);
-		protected abstract bool IsRaised(IEventContext context, EventSource eventSource, TComponent component);
+		protected abstract bool IsRaised(IContext context, EventSource eventSource, TComponent component);
 	}
 }

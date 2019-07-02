@@ -5,7 +5,7 @@ using Grove.Events;
 
 namespace Grove.Behaviours
 {
-	public class GroveScript : GroveBehaviour
+	public class GroveScript : GroveBehaviour, IEventContext
 	{
 		[SerializeField]
 		protected Grove.Events.Event m_When;
@@ -35,7 +35,7 @@ namespace Grove.Behaviours
 			base.OnDisable();
 		}
 
-		public override void OnEvent()
+		public void OnEvent()
 		{
 			Evaluate(EventSource.OnEvent);
 		}

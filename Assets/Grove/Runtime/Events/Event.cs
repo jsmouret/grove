@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using Grove.Actions;
 using Grove.Common;
 using Grove.Maths;
 
@@ -13,22 +12,18 @@ namespace Grove.Events
 		OnEvent,
 	}
 
-	public interface IEventContext : IActionContext
-	{
-		void OnEvent();
-	}
-
 	public interface IEvent
 	{
 		void OnAttach(IEventContext context);
 		void OnDetach(IEventContext context);
-		bool Raised(IEventContext context, EventSource eventSource);
+		bool Raised(IContext context, EventSource eventSource);
 	}
 
 	public abstract class EventBase : IEvent
 	{
 		[SerializeField]
 		protected BoolInput m_Mute;
+
 		public virtual void OnAttach(IEventContext context)
 		{
 		}

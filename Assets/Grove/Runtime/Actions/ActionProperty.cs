@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Grove.Common;
 using Grove.Properties;
 
 namespace Grove.Actions
@@ -7,7 +8,7 @@ namespace Grove.Actions
 	[Serializable]
 	public class ActionInput : BasicInput<Action, ActionProperty, ActionConstant>, IAction
 	{
-		public void Execute(IActionContext context)
+		public void Execute(IContext context)
 		{
 			Get(context).Execute(context);
 		}
@@ -16,7 +17,7 @@ namespace Grove.Actions
 	[CreateAssetMenu(fileName = "MyAction", menuName = "Grove/Actions/Action Property", order = 43)]
 	public class ActionProperty : Property<Action>, IAction
 	{
-		public void Execute(IActionContext context)
+		public void Execute(IContext context)
 		{
 			Load(context).Execute(context);
 		}

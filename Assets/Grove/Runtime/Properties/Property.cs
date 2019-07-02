@@ -6,7 +6,7 @@ using Grove.Variables;
 
 namespace Grove.Properties
 {
-	public interface IProperty<T> : IVariable<T>, IObservableContext
+	public interface IProperty<T> : IVariable<T>
 	{
 		void Store(IContext context, T value);
 	}

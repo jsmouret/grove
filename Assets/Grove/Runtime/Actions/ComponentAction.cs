@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Grove.Common;
 
 namespace Grove.Actions
 {
@@ -10,7 +11,7 @@ namespace Grove.Actions
 		[SerializeField]
 		protected TComponent m_TargetOverride;
 
-		protected sealed override void DoExecute(IActionContext context)
+		protected sealed override void DoExecute(IContext context)
 		{
 			if (m_TargetOverride != null)
 			{
@@ -20,6 +21,7 @@ namespace Grove.Actions
 			{
 				var behaviour = context.GetBehaviour();
 				var target = behaviour.GetComponent<TComponent>();
+
 				if (target != null)
 				{
 					Execute(context, target);
@@ -31,6 +33,6 @@ namespace Grove.Actions
 			}
 		}
 
-		protected abstract void Execute(IActionContext context, TComponent component);
+		protected abstract void Execute(IContext context, TComponent component);
 	}
 }

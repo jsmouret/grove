@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Grove.Actions;
+using Grove.Common;
 using Grove.Properties;
 
 namespace Grove.Maths
@@ -22,7 +22,7 @@ namespace Grove.Maths
 		[SerializeField]
 		protected BoolInput m_Value;
 
-		protected override bool Evaluate(IActionContext context)
+		protected override bool Evaluate(IContext context)
 		{
 			var a = m_Target.Load(context);
 			var b = m_Value.Get(context);
