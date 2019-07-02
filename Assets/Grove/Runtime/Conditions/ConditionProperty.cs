@@ -6,7 +6,7 @@ using Grove.Properties;
 namespace Grove.Conditions
 {
 	[Serializable]
-	public class ConditionInput : BasicInput<Condition, ConditionProperty, ConditionConstant>, ICondition
+	public class ConditionInput : AbstractInput<Condition, ConditionProperty, ConditionConstant>, ICondition
 	{
 		public bool Evaluate(IContext context)
 		{

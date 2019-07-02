@@ -6,7 +6,7 @@ using Grove.Properties;
 namespace Grove.Events
 {
 	[Serializable]
-	public class EventInput : BasicInput<Event, EventProperty, EventConstant>, IEvent
+	public class EventInput : AbstractInput<Event, EventProperty, EventConstant>, IEvent
 	{
 		public void OnAttach(IEventContext context)
 		{

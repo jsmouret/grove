@@ -6,7 +6,7 @@ using Grove.Properties;
 namespace Grove.Actions
 {
 	[Serializable]
-	public class ActionInput : BasicInput<Action, ActionProperty, ActionConstant>, IAction
+	public class ActionInput : AbstractInput<Action, ActionProperty, ActionConstant>, IAction
 	{
 		public void Execute(IContext context)
 		{

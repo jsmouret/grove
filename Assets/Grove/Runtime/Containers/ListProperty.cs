@@ -5,7 +5,7 @@ using Grove.Properties;
 namespace Grove.Containers
 {
 	[Serializable]
-	public class ListInput : Input<List, ListProperty, ListConstant>
+	public class ListInput : AbstractInput<List, ListProperty, ListConstant>
 	{
 	}
 

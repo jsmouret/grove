@@ -36,10 +36,8 @@ namespace Grove.Properties.Editor
 
 				if (Application.isPlaying)
 				{
-					/*
 					var input = property.GetObject() as InputBaseForEditor;
 					input.Change();
-					*/
 				}
 			}
 

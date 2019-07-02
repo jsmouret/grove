@@ -11,16 +11,16 @@ namespace Grove.Properties
 		T Get(IContext context);
 	}
 
-	public class InputBaseForEditor
+	public class InputBaseForEditor : Observable
 	{
 	}
 
 	[Serializable]
-	public class Input : BasicInput<object, Property, Constant>
+	public class Input : AbstractInput<object, Property, Constant>
 	{
 	}
 
-	public class BasicInput<T, TProperty, TConstant> : InputBaseForEditor, IInput<T>
+	public class AbstractInput<T, TProperty, TConstant> : InputBaseForEditor, IInput<T>
 		where TProperty : class, IProperty<T>
 		where TConstant : class, IConstant<T>
 	{
